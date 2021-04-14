@@ -1,5 +1,5 @@
 import React from "react";
-import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 import { Auth } from "aws-amplify";
 import API from "../utils/API";
 

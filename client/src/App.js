@@ -4,7 +4,7 @@ import NoMatch from "./pages/NoMatch"
 import Welcome from "./pages/welcome";
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import { Auth } from "aws-amplify";
-
+import Parameter from "./pages/parametersInput"
 
 const App = () => {
   const getUser = async () => {
@@ -20,6 +20,8 @@ const App = () => {
               <AmplifySignOut />
               <button onClick={getUser}> Make Api Call Test</button>
               <NoMatch />
+              <Welcome />
+              <Parameter />
             </Route>
           </Switch>
         </div>
