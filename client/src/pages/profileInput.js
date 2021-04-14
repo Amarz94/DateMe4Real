@@ -1,4 +1,4 @@
-const Profile = require("../../models/profile");
+const Profile = require("../../../models/profile");
 
 class ProfileForm extends Profile {
     constructor(props) {
