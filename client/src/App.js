@@ -1,12 +1,9 @@
 import React from "react";
-import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
-import { Auth } from "aws-amplify";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "./pages/NoMatch"
-import Parameters from "./pages/parametersInput"
 import Welcome from "./pages/welcome";
-
-
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import { Auth } from "aws-amplify";
 
 
 const App = () => {
