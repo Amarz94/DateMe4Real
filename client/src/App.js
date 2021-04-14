@@ -1,13 +1,28 @@
 import React from "react";
-import Welcome from "./pages/welcome";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import { Auth } from "aws-amplify";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NoMatch from "./pages/NoMatch"
+import Parameters from "./pages/parametersInput"
 
 const App = () => {
+  const getUser = async () => {
+    const user = await Auth.currentAuthenticatedUser();
+    console.log(user.username);
+  };
+
   return (
-    <div>
-      <AmplifySignOut />
-      <Welcome />
-    </div>
+        <Router>
+        <div>
+          <Switch>                    
+            <Route exact path="/" >
+              <AmplifySignOut />
+              <button onClick={getUser}> Make Api Call Test</button>
+              <NoMatch />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
   );
 };
-
-export default App;
+export default withAuthenticator(App);
