@@ -2,13 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "./pages/NoMatch"
 import Welcome from "./pages/welcome";
-<<<<<<< HEAD
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import { Auth } from "aws-amplify";
-import Parameter from "./pages/parametersInput"
-=======
-import { AmplifySignOut } from "@aws-amplify/ui-react";
->>>>>>> 5c76440e1bfd4e881b6d6e56de3ed3b7a0391336
+import Profile from "./pages/test"
+
 
 const App = () => {
   const getUser = async () => {
@@ -23,9 +20,12 @@ const App = () => {
             <Route exact path="/" >
               <AmplifySignOut />
               <button onClick={getUser}> Make Api Call Test</button>
-              <NoMatch />
               <Welcome />
-              <Parameter />
+              <Profile />
+              <ProfileForm />
+            </Route>
+            <Route>
+              <NoMatch />
             </Route>
           </Switch>
         </div>

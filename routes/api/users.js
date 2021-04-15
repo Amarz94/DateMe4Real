@@ -35,5 +35,12 @@ router
   .put(usersController.update)
   .delete(usersController.remove);
 
+// Matches with "/api/users/username/info"
+router
+  .route("/username/:username/info")
+  .get(usersController.findByInfo)
+  .put(usersController.update)
+  .delete(usersController.remove);
+
 
 module.exports = router;

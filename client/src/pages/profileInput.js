@@ -1,78 +1,65 @@
-class ProfileForm extends Profile {
-  constructor(props) {
-    super(props);
-    this.state = { value: "" };
+const Profile = require("../../../models/profile");
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+class ProfileForm  extends Profile {
+    constructor(props) {
+        super(props);
+        this.state = { value: '' };
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-  handleSubmit(event) {
-    console.log(this.state.value);
-    event.preventDefault();
-  }
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Sex:
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-        </label>
-        <input type="submit" value="Submit" />
+    handleSubmit(event) {
+        console.log(this.state.value);
+        event.preventDefault();
+    }
 
-        <label>
-          Date of Birth:
-          <input
-            type="date"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-        </label>
-        <input type="submit" value="Submit" />
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Sex:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
 
-        <label>
-          Race:
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="black">Black/African American</option>
-            <option value="spanish">Hispanic/Latino</option>
-            <option value="asian">Asian</option>
-            <option value="indian">Indian/Native American</option>
-            <option value="white">White/Caucasian</option>
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
+                <label>
+                    Date of Birth:
+                    <input type="date" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
 
-        <label>
-          Bodystyle:
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-        </label>
-        <input type="submit" value="Submit" />
+                <label>
+                    Race:
+                    <select value={this.state.value} onChange={this.handleChange}>
+                        <option value="black">Black/African American</option>
+                        <option value="spanish">Hispanic/Latino</option>
+                        <option value="asian">Asian</option>
+                        <option value="indian">Indian/Native American</option>
+                        <option value="white">White/Caucasian</option>
+                    </select>
+                </label>
+                <input type="submit" value="Submit" />
 
-        <label>
-          Bio:
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-    );
-  }
+                <label>
+                    Bodystyle:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+
+                <label>
+                    Bio:
+                     <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+
+            </form>
+        );
+    }
 }
 
 module.exports = ProfileForm;
