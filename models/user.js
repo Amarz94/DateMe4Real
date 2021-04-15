@@ -8,13 +8,13 @@ const QuestionSchema = require("./question").QuestionSchema;
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema(
-  { 
+  {
     username: {
       type: String,
       trim: true,
       unique: true,
     },
-    uuid: {
+    _id: {
       type: String,
       trim: true,
       unique: true,

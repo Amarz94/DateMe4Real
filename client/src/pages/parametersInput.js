@@ -1,6 +1,6 @@
-//const Parameters = require("../../models/parameters");
+const Parameters = require("../../models/parameters");
 
-class ParametersForm /*extends Parameters*/ {
+class ParametersForm extends Parameters {
     constructor(props) {
         super(props);
       this.state = { value: '' };

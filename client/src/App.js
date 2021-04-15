@@ -2,10 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "./pages/NoMatch"
 import Welcome from "./pages/welcome";
-import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
-import { Auth } from "aws-amplify";
-import Profile from "./pages/test"
+import { AmplifySignOut } from "@aws-amplify/ui-react";
+import Amplify from "aws-amplify";
+import awsconfig from "./aws-exports";
 
+Amplify.configure(awsconfig);
 
 const App = () => {
   const getUser = async () => {
